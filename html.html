@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: rgb(228, 225, 225);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row gx-2">
+            <div class="col-md-8" style="padding: 1em;">
+                <ul class="nav nav-tabs gap-1" id="myTab" role="tablist">
+                    <li class="nav-item bg-opacity-75 bg-white rounded-top" role="presentation">
+                        <button class="nav-link active text-dark" id="home-tab" data-bs-toggle="tab"
+                            data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                            aria-selected="true">Produtos</button>
+                    </li>
+                    <li class="nav-item bg-opacity-75 bg-white rounded-top" role="presentation">
+                        <button class="nav-link text-dark" id="profile-tab" data-bs-toggle="tab"
+                            data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                            aria-selected="false">Histórico</button>
+                    </li>
+                </ul>
+
+                <!--aqui é os produtos-->
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="corpo rounded" style="background-color:white;height: 600px;">
+                                    <table class="table table-sm">
+                                        <table class="table caption-top">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col"></th>
+                                                    <th scope="col">Quantidade</th>
+                                                    <th scope="col">Nome do Produto</th>
+                                                    <th scope="col">Valor do Produto</th>
+
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="corpo">
+                                                <!-- <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="maca.png" height="30">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>
+                                                                <label for="">Maçã</label>
+                                                            </td>
+                                                            <td align="right">
+                                                                
+                                                                    <div class="valorProduto me-5">
+                                                                        100,00
+                                                                        <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                            data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                            
+                                                                    </div>
+                                                                    
+                                                                
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="hamburguer.png" height="25">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Hambúrguer</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope=" row">
+                                                                        <img src="tigela.png" height="25">
+                                                                        </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Comida Japonesa</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                        
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="bolo.png" height="30">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Bolo de Chocolate</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="queijo.png" height="30">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Queijo</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="carne.png" height="20">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Carne</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="batata.png" height="30">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Batata</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="tomate.png" height="20">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Tomate</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="corpoTab">
+                                                            <th scope="row">
+                                                                <img src="pizza.png" height="30">
+                                                            </th>
+                                                            <td>
+                                                                <input type="number" onkeypress="return event.charCode >= 48" min="1" >
+                                                            </td>
+                                                            <td>Pizza</td>
+                                                            <td align="right">
+                                                                <div class="valorProduto me-5">
+                                                                    100,00
+                                                                    <button type="button" class="btn btn-outline-danger border-0 ms-2"
+                                                                        data-bs-toggle="modal" data-bs-target="#exampleModalCenter">X</button>
+                        
+                                                                </div>
+                                                            </td>
+                                                        </tr> -->
+
+                                            </tbody>
+                                        </table>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!--aqui é o histórico-->
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="container" style="background-color:white;height: 600px;">
+                            <div class="row"  >
+                            
+                                <table class="table table-sm">
+                                    <table class="table caption-top">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">Quantidade</th>
+                                                <th scope="col">Nome do Produto</th>
+                                                <th scope="col">Valor do Produto</th>
+
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="historico">
+
+                                        </tbody>
+                                    </table>
+                                
+                            </div>
+                        </div>
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--aqui é a tabelinha do lado-->
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="logo text-center">
+                            <img src="logo4.png" height="150">
+                            <br>
+                        </div>
+                        <div class="bg-white mt-3 p-3 rounded">
+
+                            <p>
+                                <b>Resumo da compra</b>
+                            </p>
+
+                            <div class="mb-3">
+                                <label for="subtotal" class="form-label" style="font-size:small">Subtotal</label>
+                                <input type="email" class="form-control" id="subtotal" aria-describedby="emailHelp"
+                                    value="R$0.00">
+                            </div>
+
+                            <label for="desconto" style="font-size:small">Desconto</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <img src="lapis.png" height="30">
+                                </span>
+                                <input type="number" class="form-control" id="desconto" placeholder=""
+                                    aria-label="Username" aria-describedby="basic-addon1" onchange="atualizaResumo()">
+                            </div>
+
+
+                            <div class="mb-3">
+                                <label for="total" class="form-label" style="font-size:small">Total</label>
+                                <input type="text" class="form-control" id="total" aria-describedby="emailHelp"
+                                    value="R$0.00">
+                            </div>
+
+                            <label for="pago" style="font-size:small">Pago</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">
+                                    <img src="lapis.png" height="30">
+                                </span>
+                                <input type="number" id="pago" class="form-control" placeholder="" aria-label="Username"
+                                    aria-describedby="basic-addon1" value="">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="troco" class="form-label" style="font-size:small">Troco</label>
+                                <input type="text" id="troco" class="form-control" aria-describedby="emailHelp"
+                                    value="R$0.00">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 bg-white mt-1 p-2 rounded">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Adicionar Produto</button>
+                </div>
+                <div class="col text-end">
+                    <button class="btn btn-danger me-md-2" type="button" onclick="cancelar()">Cancelar Compra</button>
+                    <button class="btn btn-success" type="button" id="finalizar" onclick="finalizar()">Finalizar
+                        Compra</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Botao X -->
+
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">ATENÇÃO!!</h5>
+                    </div>
+                    <div class="modal-body">
+                        Tem certeza que deseja remover este item da lista de produtos?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>
+                        <button type="button" class="btn btn-success" id="sim" onclick="removeProduto()">Sim</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog">
+                <div class="modal-dialog modal-dialog-centered"></div>
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row" id="adicionar">
+
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div class="col">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirmar</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
